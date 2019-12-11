@@ -208,5 +208,12 @@ class NodeSpec extends RdfSpec {
       Node.literal("a").isString shouldEqual true
       Node.literal("a", LanguageTag("en").rightValue).isString shouldEqual true
     }
+    "be boolean" in {
+      Node.literal(true).isBoolean shouldEqual true
+      Node.literal(false).isBoolean shouldEqual true
+      Node.literal("true", xsd.boolean.value).isBoolean shouldEqual true
+      Node.literal("true") shouldEqual false
+      Node.literal("false") shouldEqual false
+    }
   }
 }

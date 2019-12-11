@@ -284,6 +284,12 @@ object Node {
       */
     def isString: Boolean =
       dataType == xsd.string.value || dataType == rdf.langString.value
+
+    /**
+      * @return true of the value is a boolean
+      */
+    def isBoolean: Boolean =
+      dataType == xsd.boolean.value
   }
 
   object Literal {

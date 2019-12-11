@@ -2,7 +2,7 @@ package ch.epfl.bluebrain.nexus.rdf.syntax
 
 import cats.implicits._
 import ch.epfl.bluebrain.nexus.rdf.Iri.Url
-import ch.epfl.bluebrain.nexus.rdf.Node
+import ch.epfl.bluebrain.nexus.rdf.{Node, Vocabulary}
 import ch.epfl.bluebrain.nexus.rdf.Node.{BNode, IriNode}
 import ch.epfl.bluebrain.nexus.rdf.encoder.NodeEncoder
 import ch.epfl.bluebrain.nexus.rdf.encoder.NodeEncoder.EncoderResult
@@ -33,6 +33,10 @@ final class NodeContext(val sc: StringContext) extends AnyVal {
   }
   def url(args: Any*): IriNode =
     IriNode(Url.unsafe(sc.s(args: _*)))
+  def nxv(args: Any*): IriNode = {
+    val string = sc.s(args: _*)
+    IriNode(Vocabulary.nxv.base + string)
+  }
 }
 
 final class NodeSyntaxEncoderResult[A](private val result: EncoderResult[A]) extends AnyVal {

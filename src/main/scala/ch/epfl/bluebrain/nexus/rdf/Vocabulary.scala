@@ -60,6 +60,10 @@ object Vocabulary {
     val unsignedLong       = url"${base}unsignedLong"
   }
 
+  object nxv {
+    val base = url"https://bluebrain.github.io/nexus/vocabulary/".value
+  }
+
   final implicit def vocabToAbsoluteUri(iriNode: IriNode): AbsoluteIri = iriNode.value
 }
 // $COVERAGE-ON$

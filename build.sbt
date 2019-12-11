@@ -28,8 +28,9 @@ scalafmt: {
 val akkaHttpVersion      = "10.1.10"
 val catsVersion          = "2.0.0"
 val circeVersion         = "0.12.3"
-val parboiledVersion     = "2.1.8"
 val jenaVersion          = "3.13.1"
+val magnoliaVersion      = "0.12.3"
+val parboiledVersion     = "2.1.8"
 val scalaGraphVersion    = "1.13.1"
 val scalaGraphDotVersion = "1.13.0"
 val scalaTestVersion     = "3.1.0"
@@ -41,6 +42,7 @@ lazy val circeCore     = "io.circe"          %% "circe-core"     % circeVersion
 lazy val circeParser   = "io.circe"          %% "circe-parser"   % circeVersion
 lazy val jenaCore      = "org.apache.jena"   % "jena-core"       % jenaVersion
 lazy val jenaArq       = "org.apache.jena"   % "jena-arq"        % jenaVersion
+lazy val magnolia      = "com.propensive"    %% "magnolia"       % magnoliaVersion
 lazy val parboiled2    = "org.parboiled"     %% "parboiled"      % parboiledVersion
 lazy val scalaGraph    = "org.scala-graph"   %% "graph-core"     % scalaGraphVersion
 lazy val scalaGraphDot = "org.scala-graph"   %% "graph-dot"      % scalaGraphDotVersion
@@ -58,6 +60,7 @@ lazy val root = project
       circeParser,
       jenaCore,
       jenaArq,
+      magnolia,
       parboiled2,
       scalaGraph,
       scalaGraphDot,
